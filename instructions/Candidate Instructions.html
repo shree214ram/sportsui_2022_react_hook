@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://enworld.codeaid.io/1612/challenge?token=b0xWUY4ITU -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Candidate Instructions</title>
+        
+        <link rel="icon" type="image/png" href="https://enworld.codeaid.io/img/logo.png?v=20220419">
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./Candidate Instructions_files/css2" rel="stylesheet">
+        <link rel="stylesheet" href="./Candidate Instructions_files/flatpickr.min.css">
+        <link rel="stylesheet" href="./Candidate Instructions_files/app.css">
+        <link rel="stylesheet" href="./Candidate Instructions_files/prism.css">
+        <link rel="stylesheet" href="./Candidate Instructions_files/cropper.min.css" integrity="sha512-0SPWAwpC/17yYyZ/4HSllgaK7/gg9OlVozq8K7rf3J8LvCjYEEIfzzpnA2/SSjpGIunCSD18r3UhvDcu/xncWA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <style>[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+    
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Candidate Instructions_files/w.js.download"></script><script type="text/javascript" async="" src="./Candidate Instructions_files/js"></script><script type="text/javascript" async="" src="./Candidate Instructions_files/analytics.js.download"></script><script async="" src="./Candidate Instructions_files/gtm.js.download"></script><script async="" src="./Candidate Instructions_files/js(1)"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NCPE4585XB');
+
+    </script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PT4H4MB');</script>
+<!-- End Google Tag Manager -->
+                
+    </head>
+    
+    <body class="antialiased font-open-sans bg-app-background line-numbers" x-data="{
+            loaderState: false,
+            showLoader(value) { this.loaderState = value}
+        }" @loader.window="showLoader($event.detail.state)">
+        
+                <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT4H4MB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+                
+        <div wire:id="hTCbVRUYcMr6hyRt0YNx" x-data="{
+        showGeneratingRepositoryModal: window.Livewire.find(&#39;hTCbVRUYcMr6hyRt0YNx&#39;).entangle(&#39;showGeneratingRepositoryModal&#39;),
+        showInstructionsModal: window.Livewire.find(&#39;hTCbVRUYcMr6hyRt0YNx&#39;).entangle(&#39;showInstructionsModal&#39;),
+        processing: window.Livewire.find(&#39;hTCbVRUYcMr6hyRt0YNx&#39;).entangle(&#39;processing&#39;),
+        scrollToInstructionsModal: window.Livewire.find(&#39;hTCbVRUYcMr6hyRt0YNx&#39;).entangle(&#39;scrollToInstructionsModal&#39;),
+        updateTimeLineHeight() {
+            let $leftColumn = document.getElementById(&#39;instructions-left-column&#39;);
+            let $rightColumn = document.getElementById(&#39;instructions-right-column&#39;);
+            
+            let leftColumnBounds = $leftColumn.getBoundingClientRect();
+            let rightColumnBounds = $rightColumn.getBoundingClientRect();
+            
+            if(leftColumnBounds.height &gt; rightColumnBounds.height) {
+                let heightDifference = leftColumnBounds.height - rightColumnBounds.height - 30;
+                let $timeline = document.getElementById(&#39;instructions-timeline&#39;);
+                let timelineBounds = $timeline.getBoundingClientRect();
+                $timeline.style.setProperty(&#39;height&#39;, `${timelineBounds.height - heightDifference}px`);
+            }
+        }
+    }" x-init="
+    $watch(&#39;showGeneratingRepositoryModal&#39;, value =&gt; value &amp;&amp; processing &amp;&amp; $wire.beginChallenge());
+    $watch(&#39;scrollToInstructionsModal&#39;, value =&gt; {
+        if(value === true) {
+            document.getElementById(&#39;candidate-instructions-area&#39;).scrollIntoView({behavior: &#39;smooth&#39;});
+            updateTimeLineHeight();
+        }
+    })
+    
+    $nextTick(() =&gt; updateTimeLineHeight())
+    ">
+    <div class="flex flex-wrap items-start">
+        <div class="w-full md:w-5/12 lg:w-4/12 pl-0 md:pl-3 md:pb-8" id="instructions-left-column">
+            <div class="bg-white rounded-lg shadow-sm p-6 m-4 md:p-7 h-full" :class="!challenge_content ? &#39;&#39; : &#39;h-full&#39;" x-data="{challenge_content:((window.innerWidth &gt; 0) ? window.innerWidth : screen.width) &gt;= 768}">
+                <a href="https://enworld.codeaid.io/" class="text-primary text-2xl font-bold">
+                    <div class="flex items-center space-x-3 leading-7">
+                        <img src="./Candidate Instructions_files/logo-colorful.svg" class="inline-block h-7">
+                        <span class="hidden">Logo link</span>
+                    </div>
+                </a>
+                <div class="block md:hidden float-right -mt-8">
+                        <div wire:id="j8yCMN027N1USOkKVrH6">
+     <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4  border-primary text-primary font-semibold hover:border-middle hover:text-middle flex items-center space-x-1 font-semibold bg-dark-cultured border-0" wire:click.prevent="$set(&#39;showModal&#39;, true)">
+        <span class="text-xs font-semibold text-primary">Help ?</span>
+    </button>
+ 
+ 
+
+    <form wire:submit.prevent="sendMessage">
+         <div x-data="{
+        show: window.Livewire.find(&#39;j8yCMN027N1USOkKVrH6&#39;).entangle(&#39;showModal&#39;),
+        focusables() {
+            // All focusable element types...
+            let selector = &#39;a, button, input, textarea, select, details, [tabindex]:not([tabindex=\&#39;-1\&#39;])&#39;
+
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el =&gt; ! el.hasAttribute(&#39;disabled&#39;))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+        autofocus() { let focusable = $el.querySelector(&#39;[autofocus]&#39;); if (focusable) focusable.focus() },
+    }" x-init="$watch(&#39;show&#39;, value =&gt; value &amp;&amp; setTimeout(autofocus, 50))" x-on:close.stop="show = false" x-on:keydown.escape.window="show = false" x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()" x-on:keydown.shift.tab.prevent="prevFocusable().focus()" x-show="show" id="3423a5db4347ebcddb7b60db0c93b0a4" class="popup fixed top-0 inset-x-0 z-50 px-0 flex items-top justify-center h-full" style="display: none;">
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+        <div class="absolute inset-0 bg-grey opacity-75"></div>
+    </div>
+
+    <div x-show="show" class="popup-content flex flex-col absolute top-1/2 left-1/2 bg-white rounded-lg shadow-xl transform transition-all w-11/12 sm:w-full max-h-11/12 overflow-auto  sm:max-w-2xl" style="transform: translate(-50%, -50%) !important; display: none;" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        
+         <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-primary font-bold hover:text-middle absolute top-0 right-0 lg:top-2 lg:right-2 text-2xl" @click.prevent="show = false">
+        <em class="kdfi-close-outline"></em>
+            <span class="hidden">Close Modal</span>
+    </button>
+  
+        
+        <div class="flex-grow overflow-y-auto px-4 sm:px-24 pt-6 lg:pt-4 pb-4">
+        <div class="text-2xl text-primary font-bold text-center mb-3 sm:mb-10">
+            <span class="text-primary">Help Request</span>
+                <div class="mt-4 text-light-black text-base font-normal">
+                    Let us help you with any questions you have 
+                </div>
+        </div>
+
+        
+        <div class="mt-4">
+            <div class="mb-7">
+                     <div x-data="{
+        modelValue: window.Livewire.find(&#39;j8yCMN027N1USOkKVrH6&#39;).entangle(&#39;subject&#39;).defer,
+        value: null
+    }" x-init="
+        value = $wire.get(&#39;subject&#39;);
+        
+        if(value === undefined) {
+            value = null
+        }
+        
+        $watch(&#39;modelValue&#39;, newVal =&gt; {
+            value = newVal
+        })
+    ">
+        
+    <div class="flex flex-wrap items-stretch relative items-center border bg-input-cultured rounded-md w-full p-3   input-container border-grey-v2" :class="{&#39;filled&#39;: value}">
+        
+                
+            
+    
+                    <input type="text" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 bg-transparent border-0 self-center relative outline-none text-left text-grey-v2 " autocomplete="off" wire:model.defer="subject" placeholder="Subject" @focusin="event.target.closest(&#39;.input-container&#39;).classList.add(&#39;focused&#39;)" @focusout="event.target.closest(&#39;.input-container&#39;).classList.remove(&#39;focused&#39;)" x-model="value">
+                
+                
+            </div>
+    
+    </div> 
+                </div>
+
+                <div class="mb-7">
+                     <div x-data="{
+        modelValue: window.Livewire.find(&#39;j8yCMN027N1USOkKVrH6&#39;).entangle(&#39;message&#39;).defer,
+        value: null
+    }" x-init="
+        value = $wire.get(&#39;message&#39;);
+        
+        if(value === undefined) {
+            value = null
+        }
+        
+        $watch(&#39;modelValue&#39;, newVal =&gt; {
+            value = newVal
+        });
+        
+        $watch(&#39;value&#39;, value =&gt; {
+            $dispatch(&#39;updated&#39;, {value})
+        });
+    ">
+        
+    <div class="input-container flex border py-3.5 px-5 bg-cultured border-grey-v2 rounded-md shadow-sm overflow-hidden" :class="{&#39;filled&#39;: value}">
+        <textarea @focusin="event.target.closest(&#39;.input-container&#39;).classList.add(&#39;focused&#39;)" @focusout="event.target.closest(&#39;.input-container&#39;).classList.remove(&#39;focused&#39;)" rows="8" class="form-textarea block w-full bg-transparent transition outline-none duration-150 ease-in-out text-grey-v2 resize-none dark-cultured" wire:model.defer="message" placeholder="Write your question here..." maxlength="1000" @keydown.enter="submit" @keyup="content = $event.target.value" x-model="value"></textarea>
+    
+            </div>
+    
+    </div>
+ 
+                </div>
+        </div>
+    </div>
+
+    <div class="px-5 sm:px-24 py-4 bg-gray-100 text-right">
+        <div class="flex flex-wrap items-center justify-center space-y-3 sm:space-y-0 -mx-2">
+                    <div class="w-full sm:w-1/2 px-2">
+                         <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 border border-primary text-primary font-semibold hover:border-middle hover:text-middle w-full py-3 rounded-lg" wire:click="$toggle(&#39;showModal&#39;)" wire:loading.attr="disabled" wire:loading.class="cursor-not-allowed" wire:target="sendMessage">
+        <span>Cancel</span>
+    </button>
+ 
+ 
+                    </div>
+                    
+                    <div class="w-full sm:w-1/2 px-2">
+                         <button type="submit" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-white font-bold bg-primary border border-primary hover:bg-middle hover:border-middle w-full py-3 rounded-lg" wire:loading.attr="disabled" wire:loading.class="cursor-not-allowed" wire:target="sendMessage">
+        <span class="flex items-center justify-center hidden" wire:loading.class.remove="hidden" wire:target="sendMessage">
+                                 <span class="text-white">
+    <svg class="animate-spin -ml-1 mr-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+</span> 
+                                <span>Processing</span>
+                            </span>
+        
+                            <span wire:loading.class="hidden" wire:target="sendMessage">Send</span>
+    </button>
+ 
+ 
+                    </div>
+                </div>
+    </div>
+    </div>
+</div>
+ 
+ 
+     </form> 
+</div>
+
+<!-- Livewire Component wire-end:j8yCMN027N1USOkKVrH6 -->                    </div>
+                <p class="text-grey text-xs font-medium pt-8 leading-5">Challenge</p>
+                <h2 class="text-secondary text-xl font-bold leading-8">Sports League Web UI
+                    <div class="md:hidden float-right" @click="challenge_content = !challenge_content">
+                        <i :class="challenge_content ? &#39;text-primary kdfi-arrow inline-flex transform&#39; : &#39;text-primary kdfi-arrow inline-flex transform rotate-180&#39;" class="text-primary kdfi-arrow inline-flex transform"></i>
+                    </div>
+                </h2>
+                <div class="flex flex-col flex-grow" x-show="challenge_content">
+                    <div>
+                        <p class="text-grey text-xs font-bold leading-5 pt-4">CANDIDATE NAME:<span class="font-semibold text-black text-sm pl-1 lg:inline md:block md:pl-0"> Kamini&nbsp;Parmar</span></p>
+                        <p class="text-grey text-xs font-bold leading-5 pt-1">ORGANIZATION:<span class="font-semibold text-black text-sm pl-1 lg:inline md:block md:pl-0"> En World Japan</span></p>
+                        <p class="text-grey text-xs font-bold leading-5 pt-1">TECHNOLOGY:<span class="font-semibold text-black text-sm pl-1 lg:inline md:block md:pl-0"> JavaScript (React)</span></p>
+                                                <p class="text-grey text-xs font-bold leading-5 pt-1">
+                            START DATE/TIME:
+                            <span class="font-semibold text-black text-sm pl-1 lg:inline md:block md:pl-0">
+                                                                    11/25/2022 02:06 PM
+                                                            </span>
+                        </p>
+                        <p class="text-grey text-xs font-bold leading-5 pt-1">
+                            DUE DATE/TIME:
+                            <span class="font-semibold text-black text-sm pl-1 lg:inline md:block md:pl-0">
+                                                                    11/28/2022 02:06 PM
+                                                            </span>
+                        </p>
+                                            </div>
+                    
+                                            <div class="">
+                             <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-white font-bold bg-primary border border-primary hover:bg-middle hover:border-middle w-full md:w-auto font-bold leading-5 my-5" @click="$wire.emitTo(&#39;candidate.submit-challenge&#39;, &#39;$toggle&#39;, &#39;show&#39;)">
+        Submit Challenge
+    </button>
+ 
+ 
+                        </div>
+                                        
+                    <hr class="text-dark-cultured">
+
+                                            <div class="mb-5 text-dark-grey">
+                            <p class="font-bold text-base text-black leading-6 py-3">General Description</p>
+                            <div class="rich-text text-dark-grey font-normal text-sm leading-5 text-left">
+                                <p>Welcome to the Sports League Web UI project. The goal of the project is to build a browser-based Single Page Application (SPA) that gets the data from our backend and then generates a leaderboard based on the rules explained in the requirements below.&nbsp;</p>
+                            </div>
+                        </div>
+                                        <hr class="text-dark-cultured">
+                    <div class="flex-grow">
+                        <div class="text-black font-semibold">
+                            <p class="font-bold text-base leading-6 py-3">
+                                Timeline
+                            </p>
+                        </div>
+                        <div class="block container">
+                            <div class="flex flex-col pl-0 grid text-light-black overflow-y-auto" id="instructions-timeline">
+                                        
+                                    
+                                            
+                                     <div class="flex">
+    <div class="col-start-2 col-end-4 mr-10 relative ml-3">
+        <div class="h-full w-6 flex items-center justify-center">
+            <div class="h-full w-0.5 bg-dark-cultured pointer-events-none"></div>
+        </div>
+        <div class="w-12 h-12 absolute top-0 -ml-3 pb-9 rounded-full text-center bg-dark-cultured rounded-full text-2xl text-grey-v2 pt-2">
+            <i class="kdfi-start"></i>
+        </div>
+    </div>
+    <div class="col-start-4 col-end-12 mb-8 w-full relative" x-data="{opentl_9009:false}">
+        <div class="text-light-black font-bold mt-2 text-sm">
+            Challenge started
+            <div class="inline-block cursor-pointer pl-3" @click="opentl_9009 = !opentl_9009">
+                <i class="flex kdfi-arrow text-primary transform -rotate-90 transition duration-300 ease-linear" :class="{&#39;transform -rotate-90&#39;: !opentl_9009}"></i>
+            </div>
+        </div>
+        <div class="text-grey text-xs">
+                            11/25/2022 02:06 PM
+                    </div>
+        <div x-show="opentl_9009" class="bg-cultured text-black rounded-md p-3 mt-2 text-sm" style="display: none">
+            The candidate has clicked on the link and started the challenge.
+        </div>
+    </div>
+</div> 
+                                        
+                                    
+                                            
+                                     <div class="flex">
+    <div class="col-start-2 col-end-4 mr-10 relative ml-3">
+        <div class="h-full w-6 flex items-center justify-center">
+            <div class="h-full w-0.5 bg-dark-cultured pointer-events-none"></div>
+        </div>
+        <div class="w-12 h-12 absolute top-0 -ml-3 pb-9 rounded-full text-center bg-dark-cultured rounded-full text-2xl text-grey-v2 pt-2">
+            <i class="kdfi-message-outline"></i>
+        </div>
+    </div>
+    <div class="col-start-4 col-end-12 mb-8 w-full relative" x-data="{opentl_8881:false}">
+        <div class="text-light-black font-bold mt-2 text-sm">
+            Candidate invited
+            <div class="inline-block cursor-pointer pl-3" @click="opentl_8881 = !opentl_8881">
+                <i class="flex kdfi-arrow text-primary transform -rotate-90 transition duration-300 ease-linear" :class="{&#39;transform -rotate-90&#39;: !opentl_8881}"></i>
+            </div>
+        </div>
+        <div class="text-grey text-xs">
+                            11/24/2022 09:47 AM
+                    </div>
+        <div x-show="opentl_8881" class="bg-cultured text-black rounded-md p-3 mt-2 text-sm" style="display: none">
+            The candidate has been invited by <span class="font-bold italic">Tarannum Shaikh</span><br>
+    Challenge: <span class="italic">Sports League Web UI</span> <br>
+    Time limit: <span class="italic">72 hours</span> <br>
+        </div>
+    </div>
+</div> 
+                                                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full md:w-7/12 lg:w-8/12 flex flex-col flex-screen" id="instructions-right-column">
+            <div class="bg-white rounded-lg shadow-sm p-6 m-4 ">
+                <div class="flex flex-wrap items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <p class="text-base font-bold text-secondary text-3xl">Challenge Details</p>
+                    </div>
+
+                    <div class="hidden md:block">
+                        <div wire:id="pgMXYnWsCKwSlAPp0xol">
+     <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4  border-primary text-primary font-semibold hover:border-middle hover:text-middle flex items-center space-x-1 font-semibold bg-dark-cultured border-0" wire:click.prevent="$set(&#39;showModal&#39;, true)">
+        <span class="text-xs font-semibold text-primary">Help ?</span>
+    </button>
+ 
+ 
+
+    <form wire:submit.prevent="sendMessage">
+         <div x-data="{
+        show: window.Livewire.find(&#39;pgMXYnWsCKwSlAPp0xol&#39;).entangle(&#39;showModal&#39;),
+        focusables() {
+            // All focusable element types...
+            let selector = &#39;a, button, input, textarea, select, details, [tabindex]:not([tabindex=\&#39;-1\&#39;])&#39;
+
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el =&gt; ! el.hasAttribute(&#39;disabled&#39;))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+        autofocus() { let focusable = $el.querySelector(&#39;[autofocus]&#39;); if (focusable) focusable.focus() },
+    }" x-init="$watch(&#39;show&#39;, value =&gt; value &amp;&amp; setTimeout(autofocus, 50))" x-on:close.stop="show = false" x-on:keydown.escape.window="show = false" x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()" x-on:keydown.shift.tab.prevent="prevFocusable().focus()" x-show="show" id="3423a5db4347ebcddb7b60db0c93b0a4" class="popup fixed top-0 inset-x-0 z-50 px-0 flex items-top justify-center h-full" style="display: none;">
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+        <div class="absolute inset-0 bg-grey opacity-75"></div>
+    </div>
+
+    <div x-show="show" class="popup-content flex flex-col absolute top-1/2 left-1/2 bg-white rounded-lg shadow-xl transform transition-all w-11/12 sm:w-full max-h-11/12 overflow-auto  sm:max-w-2xl" style="transform: translate(-50%, -50%) !important; display: none;" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        
+         <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-primary font-bold hover:text-middle absolute top-0 right-0 lg:top-2 lg:right-2 text-2xl" @click.prevent="show = false">
+        <em class="kdfi-close-outline"></em>
+            <span class="hidden">Close Modal</span>
+    </button>
+  
+        
+        <div class="flex-grow overflow-y-auto px-4 sm:px-24 pt-6 lg:pt-4 pb-4">
+        <div class="text-2xl text-primary font-bold text-center mb-3 sm:mb-10">
+            <span class="text-primary">Help Request</span>
+                <div class="mt-4 text-light-black text-base font-normal">
+                    Let us help you with any questions you have 
+                </div>
+        </div>
+
+        
+        <div class="mt-4">
+            <div class="mb-7">
+                     <div x-data="{
+        modelValue: window.Livewire.find(&#39;pgMXYnWsCKwSlAPp0xol&#39;).entangle(&#39;subject&#39;).defer,
+        value: null
+    }" x-init="
+        value = $wire.get(&#39;subject&#39;);
+        
+        if(value === undefined) {
+            value = null
+        }
+        
+        $watch(&#39;modelValue&#39;, newVal =&gt; {
+            value = newVal
+        })
+    ">
+        
+    <div class="flex flex-wrap items-stretch relative items-center border bg-input-cultured rounded-md w-full p-3   input-container border-grey-v2" :class="{&#39;filled&#39;: value}">
+        
+                
+            
+    
+                    <input type="text" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 bg-transparent border-0 self-center relative outline-none text-left text-grey-v2 " autocomplete="off" wire:model.defer="subject" placeholder="Subject" @focusin="event.target.closest(&#39;.input-container&#39;).classList.add(&#39;focused&#39;)" @focusout="event.target.closest(&#39;.input-container&#39;).classList.remove(&#39;focused&#39;)" x-model="value">
+                
+                
+            </div>
+    
+    </div> 
+                </div>
+
+                <div class="mb-7">
+                     <div x-data="{
+        modelValue: window.Livewire.find(&#39;pgMXYnWsCKwSlAPp0xol&#39;).entangle(&#39;message&#39;).defer,
+        value: null
+    }" x-init="
+        value = $wire.get(&#39;message&#39;);
+        
+        if(value === undefined) {
+            value = null
+        }
+        
+        $watch(&#39;modelValue&#39;, newVal =&gt; {
+            value = newVal
+        });
+        
+        $watch(&#39;value&#39;, value =&gt; {
+            $dispatch(&#39;updated&#39;, {value})
+        });
+    ">
+        
+    <div class="input-container flex border py-3.5 px-5 bg-cultured border-grey-v2 rounded-md shadow-sm overflow-hidden" :class="{&#39;filled&#39;: value}">
+        <textarea @focusin="event.target.closest(&#39;.input-container&#39;).classList.add(&#39;focused&#39;)" @focusout="event.target.closest(&#39;.input-container&#39;).classList.remove(&#39;focused&#39;)" rows="8" class="form-textarea block w-full bg-transparent transition outline-none duration-150 ease-in-out text-grey-v2 resize-none dark-cultured" wire:model.defer="message" placeholder="Write your question here..." maxlength="1000" @keydown.enter="submit" @keyup="content = $event.target.value" x-model="value"></textarea>
+    
+            </div>
+    
+    </div>
+ 
+                </div>
+        </div>
+    </div>
+
+    <div class="px-5 sm:px-24 py-4 bg-gray-100 text-right">
+        <div class="flex flex-wrap items-center justify-center space-y-3 sm:space-y-0 -mx-2">
+                    <div class="w-full sm:w-1/2 px-2">
+                         <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 border border-primary text-primary font-semibold hover:border-middle hover:text-middle w-full py-3 rounded-lg" wire:click="$toggle(&#39;showModal&#39;)" wire:loading.attr="disabled" wire:loading.class="cursor-not-allowed" wire:target="sendMessage">
+        <span>Cancel</span>
+    </button>
+ 
+ 
+                    </div>
+                    
+                    <div class="w-full sm:w-1/2 px-2">
+                         <button type="submit" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-white font-bold bg-primary border border-primary hover:bg-middle hover:border-middle w-full py-3 rounded-lg" wire:loading.attr="disabled" wire:loading.class="cursor-not-allowed" wire:target="sendMessage">
+        <span class="flex items-center justify-center hidden" wire:loading.class.remove="hidden" wire:target="sendMessage">
+                                 <span class="text-white">
+    <svg class="animate-spin -ml-1 mr-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+</span> 
+                                <span>Processing</span>
+                            </span>
+        
+                            <span wire:loading.class="hidden" wire:target="sendMessage">Send</span>
+    </button>
+ 
+ 
+                    </div>
+                </div>
+    </div>
+    </div>
+</div>
+ 
+ 
+     </form> 
+</div>
+
+<!-- Livewire Component wire-end:pgMXYnWsCKwSlAPp0xol -->                    </div>
+                </div>
+                                    <div class="pt-4 break-words">
+                        <div class="rich-text text-dark-grey">
+                            <h1 class="font-bold text-2xl mb-3">Project Requirements</h1>
+<p>There is an existing backend service with an HTTP API that returns a list of matches and their results from the competition. Your task is to create a SPA that connects to this API and retrieves the list of matches. That list is then used to generate the UI pages.</p>
+<p>&nbsp;</p>
+<p>The application will have two main pages: <em>Schedule Page</em> and <em>Leaderboard Page</em>, as well as one "404 Not Found" error page.</p>
+<p>&nbsp;</p>
+<p><strong><span style="color: #e03e2d;">IMPORTANT NOTE:</span>&nbsp;</strong>Pay attention to details in the UI screenshots and the <em>Visual Style Guide </em>section below and aim to be as pixel-perfect as possible.</p>
+<p>&nbsp;</p>
+<h1 class="text-2xl mb-3">Schedule Page</h1>
+<p>The schedule page is there to display the list of matches retrieved from the backend.</p>
+<p>The following screenshots demonstrate how this page should look on three different screen sizes.</p>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; max-width: 1000px; margin: 0 auto;">
+<tbody>
+<tr style="height: 576px;">
+<td style="border-width: 0!important; width: 100%; height: 576px;" colspan="2">
+<p style="text-align: center;"><img class="border border-solid border-grey m-auto" src="./Candidate Instructions_files/fPpkN4SxBQvYqDCgMfZkiUB32MUuasQPJ9S7lFD8.png" alt="Schedule Page - 1000x700 pixels" width="1000" height="700"> <em>1000 x 700 pixels</em></p>
+</td>
+</tr>
+<tr>
+<td style="border-width: 0!important; width: 60%; height: 26px;">
+<p><img style="border: 1px solid #000000;" src="./Candidate Instructions_files/4Hb2VTRyme8jlpRUGATwLG8BAAFF6mjDCHdPelRY.png" alt="Schedule Page - 750x700 pixels" width="750" height="700"></p>
+<p class="text-center"><em>750 x 700 pixels</em></p>
+</td>
+<td style="border-width: 0!important; width: 40%; height: 26px;">
+<p><img style="border: 1px solid #000000;" src="./Candidate Instructions_files/mQWPAlHMJq7spt927Jh6bXchii0cVCJHLgl2aP8u.png" alt="Schedule Page - 500x700 pixels" width="500" height="700"></p>
+<p style="text-align: center;"><em>500 x 700 pixels</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Each row in the view represents one match from the list of matches retrieved from the backend. The order of matches should be the same as retrieved from the backend. Each match retrieved from the backend will have the following fields:</p>
+<ul>
+<li><strong>Match Date</strong> – The date and time when the match is (or should be) played.</li>
+<li><strong>Stadium </strong>– The name of the stadium where the match is (or should be) played.</li>
+<li><strong>Home Team</strong> – Name of the team that hosts the match.</li>
+<li><strong style="font-family: inherit;">Away Team</strong><span style="font-family: inherit;"> – Name of the guest/away team.</span></li>
+<li><strong style="font-family: inherit;">Match Played</strong><span style="font-family: inherit;"> – Whether the match is already played or not. In case the match is played the result should be displayed and in case the match is not played yet then the result should be - : -</span></li>
+<li><strong style="font-family: inherit;">Home Team Score</strong><span style="font-family: inherit;"> – Number of goals scored by the home team.</span></li>
+<li><strong style="font-family: inherit;">Away Team Score</strong><span style="font-family: inherit;"> – Number of goals scored by the guest/away team.</span></li>
+</ul>
+<p>&nbsp;</p>
+<h1 class="text-2xl mb-3">Leaderboard Page</h1>
+<p>The leaderboard page is there to display the current team standings based on the results from the list of matches.</p>
+<p>The following screenshots demonstrate how this page should look on three different screen sizes.</p>
+<p>&nbsp;</p>
+<table style="border-collapse: separate; width: 100%; max-width: 1000px; margin: 0 auto;">
+<tbody>
+<tr style="height: 576px;">
+<td style="border-width: 0!important; width: 100%; height: 576px;" colspan="2">
+<p><img class="border border-solid border-grey m-auto" src="./Candidate Instructions_files/HKrJYkPBKZcZd2U8Kk6GMAXYkVAepQmg4DhGT4bb.png" alt="Leaderboard Page - 1000x700 pixels" width="1000" height="700"></p>
+<p style="text-align: center;"><em>1000 x 700 pixels</em></p>
+</td>
+</tr>
+<tr>
+<td style="border-width: 0!important; width: 60%; height: 26px;">
+<p><img class="border border-solid border-grey m-auto" src="./Candidate Instructions_files/DiD0Yn0LGYsGraoHtyofimi4w7q79sHgWeIz8XsQ.png" alt="Leaderboard Page - 750x700 pixels" width="750" height="700"></p>
+<p style="text-align: center;"><em style="text-align: center;">750 x 700 pixels</em></p>
+</td>
+<td style="border-width: 0!important; width: 40%; height: 26px;">
+<p><img style="border: 1px solid #000000;" src="./Candidate Instructions_files/dDD3GgIp9p4RD1nWIoaoaUhSEN8SxRW2jKy8y6CV.png" alt="Leaderboard Page - 500x700 pixels" width="500" height="700"></p>
+<p style="text-align: center;"><em style="text-align: center;">500 x 700 pixels</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Each row represents one team and its stats. The stats displayed are:</p>
+<ul>
+<li><strong>MP (M</strong>atch <strong>P</strong>layed<strong>)</strong> – This represents the number of matches the team has played up until now.</li>
+<li><strong style="font-family: inherit;">GF (G</strong><span style="font-family: inherit;">oals </span><strong style="font-family: inherit;">F</strong><span style="font-family: inherit;">or</span><strong style="font-family: inherit;">)</strong><span style="font-family: inherit;"> – This represents the number of goals scored by the team.</span></li>
+<li><strong style="font-family: inherit;">GA (G</strong><span style="font-family: inherit;">oals </span><strong style="font-family: inherit;">A</strong><span style="font-family: inherit;">gainst</span><strong style="font-family: inherit;">)</strong><span style="font-family: inherit;"> – This represents the number of goals conceded by the team.</span></li>
+<li><strong style="font-family: inherit;">GD (G</strong><span style="font-family: inherit;">oal</span><strong style="font-family: inherit;"> D</strong><span style="font-family: inherit;">ifference</span><strong style="font-family: inherit;">)</strong><span style="font-family: inherit;"> – This represents the difference between scored and conceded goals.</span></li>
+<li><strong style="font-family: inherit;">Points</strong><span style="font-family: inherit;"> – This represents the number of points the team achieved.</span></li>
+</ul>
+<p>&nbsp;</p>
+<p>The data for the leaderboard should be generated by using the list of matches retrieved from the backend as described in the following section.&nbsp;</p>
+<p>&nbsp;</p>
+<h1 class="text-2xl mb-3">Other Pages</h1>
+<p>Besides the two above you are also required to implement the 404 Not Found page as shown in the screenshot below.</p>
+<p>&nbsp;</p>
+<p><img class="border border-solid border-grey m-auto" src="./Candidate Instructions_files/GCDKEdBeqyGT79W58UZsrC6GyEVU85KP5L0lhjPA.png" alt="404 Page - 1000x700 pixels" width="1000" height="700"></p>
+<p>&nbsp;</p>
+<p><strong><span style="color: #e03e2d;">IMPORTANT NOTE:</span>&nbsp;</strong>No other pages are required to be implemented and it is important to not add any additional pages.</p>
+<p>&nbsp;</p>
+<h1 class="text-2xl mb-3">Leaderboard Generation</h1>
+<p>The data in the leaderboard, as well as the order of teams, should be generated by using the data from the list of matches by honoring the following rule:</p>
+<ul>
+<li>For each victory teams will get 3 points.</li>
+<li>For each draw teams will get 1 point.</li>
+<li>Teams in the leaderboard are ordered by the number of points in descending order.</li>
+<li>In case two or more teams have the same number of points a tiebreaker is done in the following order:
+<ol>
+<li>The first tiebreaker is the number of points in head-to-head matches between the teams that have the same number of points. So, if multiple teams have the same number of points the order is defined by “creating” a mini leaderboard of those teams only and sorting them only by the number of points.</li>
+<li>The second tiebreaker is goal difference.</li>
+<li>The third tiebreaker is the number of scored goals.</li>
+<li>The final tiebreaker is alphabetic ascending order by name.</li>
+</ol>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong><span style="color: #e03e2d;">IMPORTANT NOTE:</span> </strong>Please pay attention to the <em>Existing Source Code </em>section below and follow the instructions written there. Not following the instructions from there might result in your solution not being accepted!</p>
+<p>&nbsp;</p>
+<p><strong>Tiebreaker Examples</strong></p>
+<p>&nbsp;</p>
+<p><strong>Example #1</strong>- Tiebreaker by head-to-head points with 2 teams.</p>
+<p><img style="border: 1px solid #000000;" src="./Candidate Instructions_files/Hv09u7ocEehyKuBOxZXznQiz2voBXi53CgMYgDar.png" alt="Tiebreaker by head-to-head points (2 teams)" width="1000"></p>
+<p>&nbsp;</p>
+<p><strong>Example #2</strong>- Tiebreaker by head-to-head points with 3 teams.</p>
+<p><img style="border: 1px solid #000000;" src="./Candidate Instructions_files/YgNdu7GjpIh5k9293yywLLshKz6p0M63CtIZjZIX.png" alt="Tiebreaker by head-to-head points (3 teams)" width="1000"></p>
+<p>&nbsp;</p>
+<p><strong>Example #3</strong>- Tiebreaker by goal difference.</p>
+<p><img style="border: 1px solid #000000;" src="./Candidate Instructions_files/uLAa1Lol8AF4IPG8GXhNdqY05iFl42kQBAibLoAJ.png" alt="Tiebreaker by goal difference" width="1000"></p>
+<p>&nbsp;</p>
+<p><strong>Example #4</strong> - Tiebreaker by the number of scored goals.</p>
+<p><img style="border: 1px solid #000000;" src="./Candidate Instructions_files/l1Ikt0g5GLsxzhsdfzbJi26Is40lkRS2Ber1qKF7.png" alt="Tiebreaker by number of scored goals" width="1000"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1 class="text-2xl mb-3">Technical Details/Requirements</h1>
+<p>To get started please read the <strong>README </strong>file from the root of the repository. Additional details can be found here.&nbsp;</p>
+<p>&nbsp;</p>
+<h1 class="text-xl mb-3">Existing Source Code</h1>
+<p>Even though this is a new project you will not be starting from scratch. In the repository, besides the assets for UI, you will also find some preexisting source code.</p>
+<p>&nbsp;</p>
+<p>File <em>src/services/LeagueService.js</em> contains <em>LeagueService class</em>. This class has several empty methods that <span style="text-decoration: underline;">you need to implement</span>:&nbsp;</p>
+<ul>
+<li><em>setMatches(matches)</em> – this method should be used to set the array of matches to <em>LeagueService</em>.</li>
+<li><em style="font-family: inherit;">getMatches()</em><span style="font-family: inherit;"> – this method returns the matches set by </span><em style="font-family: inherit;">setMatches</em><span style="font-family: inherit;">. </span></li>
+<li><em style="font-family: inherit;">getLeaderboard()</em><span style="font-family: inherit;"> – this method returns the generated leaderboard. You can implement the algorithm for generating the leaderboard in any class/function you see fit but the result needs to be retrievable via this function. </span></li>
+<li><em style="font-family: inherit;">async fetchData()</em><span style="font-family: inherit;"> – this method should load the data (array of matches) from the backend via the given API.&nbsp;</span></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="color: #e03e2d;"><strong>IMPORTANT NOTE:&nbsp;</strong></span>You must continue building on top of that preexisting source code and you should <strong>NOT DELETE </strong>any of the existing source code, files, and folders <strong>NOR</strong> move or rename any of the existing files. Please see the source code comments for more information about expected input and output from the predefined methods.</p>
+<p>&nbsp;</p>
+<h1 class="text-xl mb-3">Routing Details</h1>
+<p>The following routes should be implemented:&nbsp;</p>
+<ul>
+<li><a class="ext_link" href="http://localhost:3000/">http://localhost:3000/</a><em> </em>- should open the Schedule Page.</li>
+<li><span style="font-family: inherit;"><a class="ext_link" href="http://localhost:3000/schedule">http://localhost:3000/schedule</a></span><em style="font-family: inherit;"> </em><span style="font-family: inherit;">- should open the Schedule Page.</span></li>
+<li><span style="font-family: inherit;"><a class="ext_link" href="http://localhost:3000/leaderboard">http://localhost:3000/leaderboard</a></span><em style="font-family: inherit;"> </em><span style="font-family: inherit;">- should open the Leaderboard Page.</span></li>
+</ul>
+<p style="padding-left: 40px;">&nbsp;</p>
+<p><span style="color: #e03e2d;"><span style="font-weight: bold; font-family: inherit;">IMPORTANT NOTE: </span></span>Any other route should show the <em>404 Not Found</em> page.</p>
+<p>&nbsp;</p>
+<h1 class="text-xl mb-3">Visual Style Guide</h1>
+<p>It is important for the created UI to look as close to the above screenshots as possible. To help with that here are some technical details about the UI design:&nbsp;</p>
+<ul>
+<li>All needed graphics (such as logo, icons, "404" image) are available in the project repository already.</li>
+<li>You can use any CSS Framework you like or not use one at all - as long as the final look is as in the screenshots above.</li>
+<li>Primary font family is <em style="font-family: inherit;">‘Open Sans’</em><span style="font-family: inherit;"> and secondary is </span><em style="font-family: inherit;">'sans-serif'</em><span style="font-family: inherit;">. </span></li>
+<li>Font sizes
+<ol>
+<li>Font size in the menu is 16px.</li>
+<li>Font size in headings on pages is 24px.</li>
+<li>Font size in table headers is 12px.</li>
+<li>Font size for non-bolded table cells is 14px.</li>
+<li>Font size for bolded table cells is 16px.</li>
+</ol>
+</li>
+<li>Font colors
+<ol>
+<li>Font color in the menu is #FFFFFF.</li>
+<li>Font color in page headings is #182C62.</li>
+<li>Font color in tables is #4B5C68.</li>
+<li>Font color in the footer is #4B5C68.</li>
+</ol>
+</li>
+<li>Page header background color is #025FEB.</li>
+<li>Table header background and table border colors are #E4EDF2.</li>
+<li>Background color for even rows on the schedule page is #F6F7F7.</li>
+<li>Page footer background color is #F6F7F7.</li>
+<li>Date/Time column is formatted as <em style="font-family: inherit;">“D.M.YYYY hh:mm” </em><span style="font-family: inherit;">by following the </span><a class="ext_link" href="https://www.w3.org/TR/NOTE-datetime" target="_blank" rel="noopener">W3C Date/Time Formatting</a> formatting rules.</li>
+<li>Flag images should be taken from <a class="ext_link" title="Country Flags API" href="https://countryflagsapi.com/" target="_blank" rel="noopener">Country Flags API</a><span style="font-family: inherit;">.</span></li>
+<li>The 404 image is displayed in its original size.</li>
+<li><span style="font-family: inherit;">The images below shows the most important dimensions:<br><br></span></li>
+</ul>
+<table style="border-collapse: separate; width: 100%; max-width: 1000px; margin: 0 auto;">
+<tbody>
+<tr>
+<td style="border-width: 0!important; width: 100%; height: 576px; border-image: initial; text-align: center;" colspan="2"><img class="border border-solid border-grey m-auto" src="./Candidate Instructions_files/hsvThVJtAe7F28dlYMj3eEISo8nUlm2k6vyhu7jg.png" alt="dimensions 1000 x 700" width="1000" height="700"><em>1000 x 700 pixels</em></td>
+</tr>
+<tr>
+<td style="width: 60%; height: 26px; border-width: 0px !important;">
+<p style="text-align: center;"><img class="border border-solid border-black m-auto" src="./Candidate Instructions_files/OQDb0PwnH74XwxoAii7bKiWHynagFUNb0VMt9Dld.png" alt="dimensions 750x500" width="750" height="700"><em>750 x 700 pixels</em></p>
+</td>
+<td style="width: 40%; height: 26px; border-width: 0px !important;">
+<p style="text-align: center;"><img class="border border-solid border-black m-auto" src="./Candidate Instructions_files/3zZsFOdURyKJ9fgrJzf2ay56MtlHTUwN2dA3ogm0.png" alt="dimensions 500x700" width="500" height="700"><em style="text-align: center;">500 x 700 pixels</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h1 class="text-xl mb-3">API Details</h1>
+<p>The existing API is rather simple. The API will run on <a class="ext_link" href="http://localhots:3001/">http://localhots:3001/</a>. This should be the default host and port.&nbsp;&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="color: #e03e2d;"><strong>IMPORTANT NOTE:</strong></span> If you need to change the port locally to something else, please make sure to revert back to 3001 in your source code because otherwise, the grading system will fail to grade you or grade you low.&nbsp;</p>
+<p>&nbsp;</p>
+<p>The API has three endpoints:&nbsp;</p>
+<ol>
+<li>Get API Version</li>
+<ul>
+<li>Endpoint: <strong style="font-family: inherit;">GET /api/version&nbsp;</strong></li>
+<li>Authorization Required: <strong style="font-family: inherit;">NO</strong></li>
+<li>Response Example:
+<pre>{<br>  &nbsp; “success”: true,&nbsp;<br>  &nbsp; “version”: “v1.0”&nbsp;<br>}</pre>
+</li>
+</ul>
+<li>Get Access Token</li>
+<ul>
+<li>Endpoint: <strong style="font-family: inherit;">GET /api/v1/getAccessToken </strong></li>
+<li>Authorization Required: <strong style="font-family: inherit;">NO</strong></li>
+<li>Response Example:
+<pre>{<br>   “success”: true,<br>   “access_token”: “[TOKEN]”<br>}</pre>
+</li>
+</ul>
+<li>Get All Matches
+<ul>
+<li>Endpoint: <strong style="font-family: inherit;">GET /api/v1/getAllMatches </strong></li>
+<li>Authorization Required: <strong style="font-family: inherit;">YES (Bearer Token)<br></strong><em style="font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, &#39;Liberation Mono&#39;, &#39;Courier New&#39;, monospace; font-size: 1em;">To authenticate one needs to add <strong>Bearer [TOKEN] as </strong>Authorization header:&nbsp;</em></li>
+</ul>
+</li>
+</ol>
+<pre style="padding-left: 80px;"><br>{ <br>   headers: { <br>      Authorization: 'Bearer [TOKEN]' <br>   } <br>}&nbsp;</pre>
+<p style="padding-left: 40px;">&nbsp;</p>
+<p style="padding-left: 80px;">The [TOKEN] is retrieved from <em>getAccessToken</em> endpoint.&nbsp;</p>
+<p style="padding-left: 120px;">&nbsp;</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>Response Example:</li>
+</ul>
+</li>
+</ul>
+<pre style="padding-left: 120px;">{&nbsp;<br>  &nbsp;"success": true,&nbsp;<br>  &nbsp;"matches": [ <br>  &nbsp; &nbsp; { <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"matchDate": 1651744228685,&nbsp;<br>  &nbsp; &nbsp; &nbsp; &nbsp;"stadium": "Maracanã", <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"homeTeam": "Brazil",&nbsp;<br>  &nbsp; &nbsp; &nbsp; &nbsp;"awayTeam": "Agentina",&nbsp;<br>  &nbsp; &nbsp; &nbsp; &nbsp;"matchPlayed": true/false, <br>  &nbsp; &nbsp; &nbsp; &nbsp;"homeTeamScore": 0, <br>  &nbsp; &nbsp; &nbsp; &nbsp;"awayTeamScore": 0 <br>  &nbsp; &nbsp; },&nbsp;<br>  &nbsp; &nbsp; {…}, <br>  &nbsp;]&nbsp;<br>} <br><br></pre>
+<p><strong><span style="color: #e03e2d;">IMPORTANT NOTE:</span>&nbsp;</strong>The /v1/ in the endpoint URL should be hardcoded and not retrieved from the API Version endpoint.&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1 class="font-bold text-2xl mb-3">Existing Source Code</h1>
+<p>Even though this is a new project you will not be starting from scratch. In the repository you will also find some preexisting source code.</p>
+<p>&nbsp;</p>
+<p>You must continue building on top of that preexisting source code and you should <strong>NOT DELETE</strong> any of the existing source code, files and folders <strong>NOR</strong> move or rename any of the existing files, classes, methods or variables. However, you’re free to add new source files to the project and extend existing classes with your own methods and variables.&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="color: #e03e2d;"><strong>IMPORTANT NOTE:</strong></span> Please follow the instructions in the existing source code. Not following the instructions and not using the preexisting source code as a base might result in automatic test failures.</p>
+                        </div>
+                    </div>
+                                <div class="rich-text text-dark-grey pt-4 break-words">
+                    <h1 class="text-2xl mb-3">How To Run Instructions</h1>
+<p>The challenge should be implemented in React.</p>
+<p>&nbsp;</p>
+<p>To run the backend mock server execute:</p>
+<pre>&gt; <strong>npm</strong> install</pre>
+<pre>&gt; <strong>npx</strong> json-fake-server -m dev-mock-server-config.json</pre>
+<p>&nbsp;</p>
+<p>After this, you would be able to access the backend at <em>http://localhost:3001</em>. <br>To verify if the server is running you can run:</p>
+<pre>&gt; <strong>curl</strong>&nbsp;http://localhost:3001/api/version</pre>
+<p class="text-base mb-1"><br>The response should be <em>{"success": true, "version": "1.0"}.</em></p>
+<p>&nbsp;</p>
+<p>To run the application just execute:</p>
+<pre>&gt;&nbsp;<strong>npm</strong> start</pre>
+<p>&nbsp;</p>
+                </div>
+            </div>
+                        <div id="candidate-instructions-area" class="bg-white text-dark-grey rounded-lg shadow-sm p-6 m-4 flex flex-col flex-grow">
+                <p class="text-base font-bold text-secondary text-3xl">Repository Instructions</p>
+                <div class="md:px-4 text-left px-0 font-normal text-dark-grey pt-8">
+    <ol class="list-decimal text-sm pl-4 md:pl-0">
+        <li class="pb-3">First, install Git and clone the repository:</li>
+        <p class="pb-3">
+            <span class="text-primary text-sm font-normal leading-5 bg-dark-cultured py-2 pl-3 pr-12 m-px relative inline-flex items-center max-w-full select-text">
+                <span class="select-none mr-2 self-start">$ </span>
+                <span class="text-ellipsis overflow-hidden">git clone https://kamini-parmar-4pUW@git.codeaid.io/enworld-55/kamini-parmar-4pUW-sports-league-web-ui-KVMg.git </span>
+                <span class="copy-git-repo cursor-pointer inline-flex items-start justify-center pt-2 h-full text-lg p-0 absolute right-0 w-8 -translate-y-1/2 hover:bg-light-gray" data-clipboard-text="git clone https://kamini-parmar-4pUW@git.codeaid.io/enworld-55/kamini-parmar-4pUW-sports-league-web-ui-KVMg.git" title="Copy"><i class="kdfi-copy"></i></span>
+            </span>
+        </p>
+        <p class="pb-3">Your password is:</p>
+        <p class="pb-3">
+            <span class="text-primary text-sm font-normal leading-5 bg-dark-cultured py-2 pl-3 pr-12 m-px relative inline-flex items-center max-w-full select-text">
+                <span class="text-ellipsis overflow-hidden">011e7543d1f8c5e6a5e67426252c8af7fcf08fdc</span>
+                <span class="copy-repo-password cursor-pointer inline-flex items-start justify-center pt-2 h-full text-lg p-0 absolute right-0 w-8 -translate-y-1/2 hover:bg-light-gray" data-clipboard-text="011e7543d1f8c5e6a5e67426252c8af7fcf08fdc" title="Copy"><i class="kdfi-copy"></i></span>
+            </span>
+        </p>
+        <li class="pb-3">Work on your challenge following the description above.</li>
+        <li class="pb-3">Once you are satisfied with the result, push your commits to the <span class="font-semibold">master</span> branch of the repository:</li>
+        <p class="pb-3">
+            <span class="text-primary text-sm font-normal leading-5 bg-dark-cultured py-2 pl-3 pr-12 m-px relative inline-flex items-center max-w-full select-text">
+                <span class="select-none mr-2 self-start">$ </span>
+                <span class="text-ellipsis overflow-hidden">git push origin master</span>
+                <span class="copy-git-push cursor-pointer inline-flex items-start justify-center pt-2 h-full text-lg p-0 absolute right-0 w-8 -translate-y-1/2 hover:bg-light-gray" data-clipboard-text="git push origin master" title="Copy"><i class="kdfi-copy"></i>
+            </span>
+        </span></p>
+    </ol>
+</div>            </div>
+                    </div>
+    </div>
+    
+    
+    <input type="hidden" x-data="{timezoneOffset: window.Livewire.find(&#39;hTCbVRUYcMr6hyRt0YNx&#39;).entangle(&#39;timezoneOffset&#39;).defer}" x-init="timezoneOffset = (new Date()).getTimezoneOffset() / 60 * - 1" x-model="timezoneOffset" class="border border-primary" value="5.5">
+    
+    
+     <div x-data="{
+        show: window.Livewire.find(&#39;hTCbVRUYcMr6hyRt0YNx&#39;).entangle(&#39;showGeneratingRepositoryModal&#39;),
+        focusables() {
+            // All focusable element types...
+            let selector = &#39;a, button, input, textarea, select, details, [tabindex]:not([tabindex=\&#39;-1\&#39;])&#39;
+
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el =&gt; ! el.hasAttribute(&#39;disabled&#39;))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+        autofocus() { let focusable = $el.querySelector(&#39;[autofocus]&#39;); if (focusable) focusable.focus() },
+    }" x-init="$watch(&#39;show&#39;, value =&gt; value &amp;&amp; setTimeout(autofocus, 50))" x-on:close.stop="show = false" x-on:keydown.escape.window="show = false" x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()" x-on:keydown.shift.tab.prevent="prevFocusable().focus()" x-show="show" id="0d42dde80aa1650e1dbab54cb16815a1" class="popup fixed top-0 inset-x-0 z-50 px-0 flex items-top justify-center h-full" style="display: none;">
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+        <div class="absolute inset-0 bg-grey opacity-75"></div>
+    </div>
+
+    <div x-show="show" class="popup-content flex flex-col absolute top-1/2 left-1/2 bg-white rounded-lg shadow-xl transform transition-all w-11/12 sm:w-full max-h-11/12 overflow-auto  sm:max-w-2xl" style="transform: translate(-50%, -50%) !important; display: none;" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        
+         <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-primary font-bold hover:text-middle absolute top-0 right-0 lg:top-2 lg:right-2 text-2xl" @click.prevent="show = false">
+        <em class="kdfi-close-outline"></em>
+            <span class="hidden">Close Modal</span>
+    </button>
+  
+        
+        <div class="px-4 sm:px-24 py-36">
+            <div class="text-2xl text-primary font-bold sm:mb-10 text-center space-y-5">
+                <img class="h-11 w-auto inline-block animate-spin" src="./Candidate Instructions_files/spin.svg" alt="Generating..."> <br>
+                <span class="inline-block text-center">Generating Repository...</span>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+    
+    
+    
+     <div x-data="{
+        show: window.Livewire.find(&#39;hTCbVRUYcMr6hyRt0YNx&#39;).entangle(&#39;showInstructionsModal&#39;),
+        focusables() {
+            // All focusable element types...
+            let selector = &#39;a, button, input, textarea, select, details, [tabindex]:not([tabindex=\&#39;-1\&#39;])&#39;
+
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el =&gt; ! el.hasAttribute(&#39;disabled&#39;))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+        autofocus() { let focusable = $el.querySelector(&#39;[autofocus]&#39;); if (focusable) focusable.focus() },
+    }" x-init="$watch(&#39;show&#39;, value =&gt; value &amp;&amp; setTimeout(autofocus, 50))" x-on:close.stop="show = false" x-on:keydown.escape.window="show = false" x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()" x-on:keydown.shift.tab.prevent="prevFocusable().focus()" x-show="show" id="b0b7a5c451957cf5160f13adc95d667d" class="popup fixed top-0 inset-x-0 z-50 px-0 flex items-top justify-center h-full" style="display: none;">
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+        <div class="absolute inset-0 bg-grey opacity-75"></div>
+    </div>
+
+    <div x-show="show" class="popup-content flex flex-col absolute top-1/2 left-1/2 bg-white rounded-lg shadow-xl transform transition-all w-11/12 sm:w-full max-h-11/12 overflow-auto  sm:max-w-2xl" style="transform: translate(-50%, -50%) !important; display: none;" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        
+         <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-primary font-bold hover:text-middle absolute top-0 right-0 lg:top-2 lg:right-2 text-2xl" @click.prevent="show = false">
+        <em class="kdfi-close-outline"></em>
+            <span class="hidden">Close Modal</span>
+    </button>
+  
+        
+        <div class="p-4 sm:p-16">
+             <div class="text-2xl text-primary font-bold -mb-2">Repository instructions</div>
+            <div class="md:px-4 text-left px-0 font-normal text-dark-grey pt-8">
+    <ol class="list-decimal text-sm pl-4 md:pl-0">
+        <li class="pb-3">First, install Git and clone the repository:</li>
+        <p class="pb-3">
+            <span class="text-primary text-sm font-normal leading-5 bg-dark-cultured py-2 pl-3 pr-12 m-px relative inline-flex items-center max-w-full select-text">
+                <span class="select-none mr-2 self-start">$ </span>
+                <span class="text-ellipsis overflow-hidden">git clone https://kamini-parmar-4pUW@git.codeaid.io/enworld-55/kamini-parmar-4pUW-sports-league-web-ui-KVMg.git </span>
+                <span class="copy-git-repo cursor-pointer inline-flex items-start justify-center pt-2 h-full text-lg p-0 absolute right-0 w-8 -translate-y-1/2 hover:bg-light-gray" data-clipboard-text="git clone https://kamini-parmar-4pUW@git.codeaid.io/enworld-55/kamini-parmar-4pUW-sports-league-web-ui-KVMg.git" title="Copy"><i class="kdfi-copy"></i></span>
+            </span>
+        </p>
+        <p class="pb-3">Your password is:</p>
+        <p class="pb-3">
+            <span class="text-primary text-sm font-normal leading-5 bg-dark-cultured py-2 pl-3 pr-12 m-px relative inline-flex items-center max-w-full select-text">
+                <span class="text-ellipsis overflow-hidden">011e7543d1f8c5e6a5e67426252c8af7fcf08fdc</span>
+                <span class="copy-repo-password cursor-pointer inline-flex items-start justify-center pt-2 h-full text-lg p-0 absolute right-0 w-8 -translate-y-1/2 hover:bg-light-gray" data-clipboard-text="011e7543d1f8c5e6a5e67426252c8af7fcf08fdc" title="Copy"><i class="kdfi-copy"></i></span>
+            </span>
+        </p>
+        <li class="pb-3">Work on your challenge following the description above.</li>
+        <li class="pb-3">Once you are satisfied with the result, push your commits to the <span class="font-semibold">master</span> branch of the repository:</li>
+        <p class="pb-3">
+            <span class="text-primary text-sm font-normal leading-5 bg-dark-cultured py-2 pl-3 pr-12 m-px relative inline-flex items-center max-w-full select-text">
+                <span class="select-none mr-2 self-start">$ </span>
+                <span class="text-ellipsis overflow-hidden">git push origin master</span>
+                <span class="copy-git-push cursor-pointer inline-flex items-start justify-center pt-2 h-full text-lg p-0 absolute right-0 w-8 -translate-y-1/2 hover:bg-light-gray" data-clipboard-text="git push origin master" title="Copy"><i class="kdfi-copy"></i>
+            </span>
+        </span></p>
+    </ol>
+</div>        </div>
+    </div>
+</div>
+ 
+    
+
+     <div x-data="{
+        messages: [],
+        type: &quot;success&quot;,
+        remove(message) {
+            this.messages.splice(this.messages.indexOf(message), 1)
+        },
+    }" @notify.window="let message = $event.detail; messages.push(message); type = &#39;success&#39;; setTimeout(() =&gt; { remove(message) }, 5000)" @notifyerror.window="let message = $event.detail; messages.push(message); type = &#39;error&#39;; setTimeout(() =&gt; { remove(message) }, 5000)" class="fixed inset-0 flex flex-col items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:justify-start space-y-4 z-50">
+    <template x-for="(message, messageIndex) in messages" :key="messageIndex" hidden=""></template>
+</div>
+ 
+    <div wire:id="1I8JxtSoQ4lnJ0LHW8pL">
+    <form wire:submit.prevent="submitChallenge">
+         <div x-data="{
+        show: window.Livewire.find(&#39;1I8JxtSoQ4lnJ0LHW8pL&#39;).entangle(&#39;show&#39;).defer,
+        focusables() {
+            // All focusable element types...
+            let selector = &#39;a, button, input, textarea, select, details, [tabindex]:not([tabindex=\&#39;-1\&#39;])&#39;
+
+            return [...$el.querySelectorAll(selector)]
+                // All non-disabled elements...
+                .filter(el =&gt; ! el.hasAttribute(&#39;disabled&#39;))
+        },
+        firstFocusable() { return this.focusables()[0] },
+        lastFocusable() { return this.focusables().slice(-1)[0] },
+        nextFocusable() { return this.focusables()[this.nextFocusableIndex()] || this.firstFocusable() },
+        prevFocusable() { return this.focusables()[this.prevFocusableIndex()] || this.lastFocusable() },
+        nextFocusableIndex() { return (this.focusables().indexOf(document.activeElement) + 1) % (this.focusables().length + 1) },
+        prevFocusableIndex() { return Math.max(0, this.focusables().indexOf(document.activeElement)) -1 },
+        autofocus() { let focusable = $el.querySelector(&#39;[autofocus]&#39;); if (focusable) focusable.focus() },
+    }" x-init="$watch(&#39;show&#39;, value =&gt; value &amp;&amp; setTimeout(autofocus, 50))" x-on:close.stop="show = false" x-on:keydown.escape.window="show = false" x-on:keydown.tab.prevent="$event.shiftKey || nextFocusable().focus()" x-on:keydown.shift.tab.prevent="prevFocusable().focus()" x-show="show" id="a7dd12b1dab17d25467b0b0a4c8d4a92" class="popup fixed top-0 inset-x-0 z-50 px-0 flex items-top justify-center h-full" style="display: none;">
+    <div x-show="show" class="fixed inset-0 transform transition-all" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" style="display: none;">
+        <div class="absolute inset-0 bg-grey opacity-75"></div>
+    </div>
+
+    <div x-show="show" class="popup-content flex flex-col absolute top-1/2 left-1/2 bg-white rounded-lg shadow-xl transform transition-all w-11/12 sm:w-full max-h-11/12 overflow-auto  sm:max-w-2xl" style="transform: translate(-50%, -50%) !important; display: none;" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+        
+         <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-primary font-bold hover:text-middle absolute top-0 right-0 lg:top-2 lg:right-2 text-2xl" @click.prevent="show = false">
+        <em class="kdfi-close-outline"></em>
+            <span class="hidden">Close Modal</span>
+    </button>
+  
+        
+        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div class="flex flex-col items-center text-center space-y-2">
+                            <h3 class="flex items-center justify-center text-lg text-primary font-bold">
+                    Are you sure you want to submit the challenge ?
+                </h3>
+                        
+                    </div>
+
+                    <div class="mt-5 text-center">
+                When submitted, the repository will be locked and the challenge will be sent for evaluation. We will be in touch once your challenge has been evaluated.
+            </div>
+            </div>
+
+    <div class="px-6 py-4 bg-gray-100 text-right">
+        <div class="flex flex-wrap items-center justify-center space-y-3 sm:space-y-0 -mx-2">
+                    <div class="w-full sm:w-1/2 px-2">
+                         <button type="button" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 border border-primary text-primary font-semibold hover:border-middle hover:text-middle w-full py-3 rounded-lg" wire:click="$toggle(&#39;show&#39;)" wire:loading.attr="disabled" wire:loading.class="cursor-not-allowed woopra-submit-challenge" wire:target="submitChallenge">
+        <span>No</span>
+    </button>
+ 
+ 
+                    </div>
+                    <div class="w-full sm:w-1/2 px-2">
+                         <button type="submit" class="rounded-md text-sm leading-5 font-medium focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition duration-150 ease-in-out py-2 px-4 text-white font-bold bg-primary border border-primary hover:bg-middle hover:border-middle w-full py-3 rounded-lg woopra-submit-challenge" wire:loading.attr="disabled" wire:loading.class="cursor-not-allowed" wire:target="submitChallenge">
+        <span class="flex items-center hidden" wire:loading.class.remove="hidden" wire:target="submitChallenge">
+                                 <span>
+    <svg class="animate-spin -ml-1 mr-2 w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+    </svg>
+</span> 
+                                <span>Processing</span>
+                            </span>
+                            
+                            <span wire:loading.class="hidden" wire:target="submitChallenge">Yes</span>
+    </button>
+ 
+ 
+                    </div>
+                </div>
+    </div>
+    </div>
+</div>
+ 
+ 
+    </form>
+</div>
+<!-- Livewire Component wire-end:1I8JxtSoQ4lnJ0LHW8pL -->    
+    <div class="flex items-center justify-center absolute w-full h-full top-0 left-0 bg-white bg-opacity-50" x-show="loaderState" style="display: none">
+    <img class="h-11 w-auto inline-block animate-spin" src="./Candidate Instructions_files/spin.svg" alt="Loading...">
+</div>
+    </div>
+<!-- Livewire Component wire-end:hTCbVRUYcMr6hyRt0YNx -->
+        
+        <script src="./Candidate Instructions_files/livewire.js.download" data-turbo-eval="false" data-turbolinks-eval="false"></script><script data-turbo-eval="false" data-turbolinks-eval="false">window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'GSdD3bGw0uMQQXdFTs6d43RAGjjyaM7ft5dzWybH';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
+    
+        <script src="./Candidate Instructions_files/manifest.js.download"></script>
+        <script src="./Candidate Instructions_files/vendor.js.download"></script>
+        <script src="./Candidate Instructions_files/app.js.download"></script>
+        <script src="./Candidate Instructions_files/prism.js.download"></script>
+        
+        <script defer="" src="./Candidate Instructions_files/cdn.min.js.download"></script>
+    
+       
+            
+        <script src="./Candidate Instructions_files/flatpickr"></script>
+        <script src="./Candidate Instructions_files/tinymce.min.js.download" integrity="sha512-MbhLUiUv8Qel+cWFyUG0fMC8/g9r+GULWRZ0axljv3hJhU6/0B3NoL6xvnJPTYZzNqCQU3+TzRVxhkE531CLKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./Candidate Instructions_files/cropper.min.js.download" integrity="sha512-ooSWpxJsiXe6t4+PPjCgYmVfr1NS5QXJACcR/FPpsdm6kqG1FmQ2SVyg2RXeVuCRBLr0lWHnWJP6Zs1Efvxzww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+                        
+                    <!-- Start of Woopra Code Production-->
+            <script>
+            !function(){var t,o,c,e=window,n=document,r=arguments,a="script",i=["call","cancelAction","config","identify","push","track","trackClick","trackForm","update","visit"],s=function(){var t,o=this,c=function(t){o[t]=function(){return o._e.push([t].concat(Array.prototype.slice.call(arguments,0))),o}};for(o._e=[],t=0;t<i.length;t++)c(i[t])};for(e.__woo=e.__woo||{},t=0;t<r.length;t++)e.__woo[r[t]]=e[r[t]]=e[r[t]]||new s;(o=n.createElement(a)).async=1,o.src="https://static.woopra.com/js/w.js",(c=n.getElementsByTagName(a)[0]).parentNode.insertBefore(o,c)}("woopra");
+
+            woopra.config({
+                domain: "app.codeaid.io",
+                outgoing_tracking: true,
+                download_tracking: true,
+                click_tracking: true
+            });
+    
+            
+            woopra.track();
+
+            </script>
+            <!-- End of Woopra Code  Production-->
+        
+            <script>
+        Livewire.on('woopraCandidateBeganChallenge', (candidateName, candidateEmail, challengeName, challengeLanguage, seniority, organizationName) => {
+            window.woopra.track('candidate_began', {
+                    url: window.location.pathname,                    
+                    candidate_name: candidateName,
+                    candidate_email: candidateEmail,
+                    candidate_challenge: challengeName,
+                    candidate_language: challengeLanguage,
+                    candidate_seniority: seniority,
+                    organization_name: organizationName,
+                });            
+        })
+    </script>
+        
+    
+
+</body></html>

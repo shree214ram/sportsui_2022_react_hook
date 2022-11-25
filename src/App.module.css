@@ -1,0 +1,161 @@
+.welcomeMessage {
+    margin: 120px auto;
+    width: 50%;
+    text-align: left;
+    font-size: 24px;
+}
+
+.mainContainer {
+    min-height: 463px;
+    padding: 60px 5% 2% 5%;
+}
+
+.innerContainer {
+    padding: 1px 1px 1px 1px;
+}
+
+.titleContainer {
+    font-size: 24px;
+    color: #182C62;
+    padding: 1px 1px 1px 1px;
+    text-align: center;
+    min-height: 44px;
+    font-weight: bold;
+}
+
+.tableContainer {
+    font-size: 24px;
+}
+
+.tableStyle {
+    font-size: 24px;
+    width: 100%;
+    color: #4B5C68;
+}
+
+.headerTr {
+    font-size: 12px;
+    height: 40px;
+    background-color: #E4EDF2;
+}
+
+.thStyle {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.thStyleAlignLeft {
+    text-align: left;
+    padding-left: 12px;
+}
+
+.normalTr {
+    font-size: 14px;
+    height: 70px;
+}
+
+.normalTrEven {
+    background-color: #F6F7F7;
+}
+
+.normalTrOdd {
+    background-color: #ffffff;
+}
+
+.normalTrBold {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: darkkhaki;
+}
+
+.tdStyle {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.tdStyleAlignLeft {
+    text-align: left;
+    padding-left: 12px;
+}
+
+.tdStyleAlignRight {
+    text-align: center;
+}
+
+.tdStyleBold {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* Image and Points */
+.imageAndPoints {
+    float: left;
+    width: 100%;
+}
+
+.leftCountry {
+    width: 38%;
+    float: left;
+    padding-right: 31px;
+    text-align: right;
+}
+
+.leftCountryImg {
+    float: left;
+    width: 13%;
+}
+
+.pointsOfMatch {
+    float: left;
+    width: 18%;
+    margin-left: 7px;
+}
+
+.rightCountry {
+    width: 10%;
+    margin-left: 29px;
+}
+
+.rightCountryImg {
+    width: 15%;
+    float: left;
+}
+
+.lineBreak {
+    height: 8px;
+}
+
+.time {
+    margin-left: 40px;
+}
+
+.date {
+    margin-left: 1px;
+}
+/* Leaderboard */
+.rightCountryImgL {
+    width: 8%;
+    float: left;
+}
+.tdStyleBoldL {
+    font-size: 16px;
+    font-weight: bold;
+    width: 53%;
+}
+
+@media (max-width: 750px) {
+    .dateTime {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .dateTime {
+        display: none;
+    }
+
+    .stadim {
+        display: none;
+    }
+}

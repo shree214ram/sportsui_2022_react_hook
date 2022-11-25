@@ -1,0 +1,138 @@
+section {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section,
+.container,
+.container_fluid {
+  position: relative;
+  word-wrap: break-word;
+}
+
+section {
+  background-color: #eeeeee;
+}
+
+/* navbar */
+.cidNav .navbardropdown {
+  padding: 5px 40px 5px 40px;
+}
+
+.cidNav .navbar {
+  min-height: 50px;
+  transition: all .3s;
+  background: #025FEB;
+}
+
+
+/* Brand */
+.cidNav .navbarbrand {
+  float: left;
+  padding-top: 4px;
+}
+
+/* Logo */
+
+.menu .navbarbrand span {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.navbardropdown .navbarbrand span {
+  vertical-align: -4px;
+}
+
+.navbardropdown .navbar_logo {
+  margin-right: 0.8rem;
+  transition: margin 0.3s ease-in-out;
+  vertical-align: middle;
+}
+
+/* nav caption */
+.menu .navbarbrand .navbar-caption-wrap {
+  display: -webkit-flex;
+}
+
+.menu .navbarbrand span {
+  display: flex;
+  display: -webkit-flex;
+}
+
+.navbardropdown .navbarbrand span {
+  vertical-align: -4px;
+}
+
+.nav_dropdown li {
+  float: left;
+  display: inline;
+  margin-right: 40px;
+}
+
+.nav_item img {
+  margin-right: 5px;
+  float: left;
+}
+
+.nav_item a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 16px;
+  float: right;
+  margin-top: 2.2px;
+}
+
+/* nav dropdown */
+.cidNav .navbar .navbar_collapse {
+  justify-content: flex-end;
+  z-index: 1;
+  float: right;
+}
+
+.cidNav ul.navbar_nav {
+  flex-wrap: wrap;
+}
+
+.dropdown,
+.dropup {
+  position: relative;
+}
+
+.cidNav .navbar.navbarexpandlg .dropdown .dropdown_menu {
+  background: #025FEB;
+}
+
+.nav_dropdown {
+  font-size: 0.75rem;
+  font-weight: 500;
+  height: auto !important;
+}
+
+/* == */
+.cidNav .navbar_buttons {
+  text-align: center;
+}
+
+nav .mbr_section_btn {
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
+.mbr_section_btn {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+  font-size: 0;
+}
+
+.cidNav .icons_menu {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  padding-left: 1rem;
+  text-align: center;
+}
+
+.cidNav .navbar.navbarexpandlg .dropdown .dropdown_menu {
+  background: #232323;
+}
