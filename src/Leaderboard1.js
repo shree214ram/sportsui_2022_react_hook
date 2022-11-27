@@ -32,27 +32,33 @@ function Leaderboard() {
           total goal =current score
           total points =current points {if both the tem sore same then 1 , Or if team wons then 3}
       */
-      for (let key in obj) {
-        const leaderboardProperty = new LeaderboardService();
-        if (key == "homeTeam" || key == "awayTeam") {
-          const reverseKey = key == "homeTeam" ? "awayTeam" : "homeTeam";
-          if (uniqueTeam.get(obj[key])) {
-            leaderboardProperty.totalMatches = uniqueTeam.get(obj[key]).totalMatches + 1;
-            leaderboardProperty.totalGoal = uniqueTeam.get(obj[key]).totalGoal + obj[`${key}Score`];
-            leaderboardProperty.totalGoalByReverseTeam = uniqueTeam.get(obj[key]).totalGoalByReverseTeam + obj[`${reverseKey}Score`];
-            const currentPoint =  (obj[`${key}Score`] == obj[`${reverseKey}Score`]) ? 1 :
-            obj[`${key}Score`] > obj[`${reverseKey}Score`] ? 3 : 0;
-            leaderboardProperty.totalPoints = uniqueTeam.get(obj[key]).totalPoints + currentPoint;
-            uniqueTeam.set(obj[key], leaderboardProperty)
-          } else {
-            leaderboardProperty.totalMatches = 1;
-            leaderboardProperty.totalGoal = obj[`${key}Score`];
-            leaderboardProperty.totalGoalByReverseTeam = obj[`${reverseKey}Score`];
-            leaderboardProperty.totalPoints = (obj[`${key}Score`] == obj[`${reverseKey}Score`]) ? 1 :
-              obj[`${key}Score`] > obj[`${reverseKey}Score`] ? 3 : 0;
-            uniqueTeam.set(obj[key], leaderboardProperty)
-          }
-        }
+      if (uniqueTeam.get(obj.homeTeam)) {
+        leaderboardProperty.totalMatches = uniqueTeam.get(obj.homeTeam).totalMatches + 1;
+        leaderboardProperty.totalGoal = uniqueTeam.get(obj.homeTeam).totalGoal + obj.homeTeamScore;
+        leaderboardProperty.totalPoints = uniqueTeam.get(obj.homeTeam).totalPoints + (obj.homeTeamScore == obj.awayTeamScore) ? 1 :
+          obj.homeTeamScore > obj.awayTeamScore ? 3 : 0;
+        uniqueTeam.set(obj.homeTeam, leaderboardProperty)
+
+      } else {
+        leaderboardProperty.totalMatches = 1;
+        leaderboardProperty.totalGoal = obj.homeTeamScore;
+        leaderboardProperty.totalPoints = (obj.homeTeamScore == obj.awayTeamScore) ? 1 :
+          obj.homeTeamScore > obj.awayTeamScore ? 3 : 0;
+        uniqueTeam.set(obj.homeTeam, leaderboardProperty)
+      }
+      if (uniqueTeam.get(obj.awayTeam)) {
+        leaderboardProperty.totalMatches = uniqueTeam.get(obj.awayTeam).totalMatches + 1;
+        leaderboardProperty.totalGoal = uniqueTeam.get(obj.awayTeam).totalGoal + obj.awayTeamScore;
+        leaderboardProperty.totalPoints = uniqueTeam.get(obj.awayTeam).totalPoints + (obj.homeTeamScore == obj.awayTeamScore) ? 1 :
+          obj.homeTeamScore < obj.awayTeamScore ? 3 : 0;
+        uniqueTeam.set(obj.awayTeam, leaderboardProperty)
+
+      } else {
+        leaderboardProperty.totalMatches = 1;
+        leaderboardProperty.totalGoal = obj.awayTeamScore;
+        leaderboardProperty.totalPoints = (obj.homeTeamScore == obj.awayTeamScore) ? 1 :
+          obj.homeTeamScore < obj.awayTeamScore ? 3 : 0;
+        uniqueTeam.set(obj.awayTeam, leaderboardProperty)
       }
     })
   }
@@ -66,15 +72,9 @@ function Leaderboard() {
         <span class={style.rightCountry}>{key}</span>
       </td>
       <td class={`${style.tdStyle} ${style.tdStyleAlignLeft} `}>{value.totalMatches}</td>
-      <td class={`${style.tdStyle} ${style.tdStyleAlignLeft} `}>
-        {value.totalGoal}
-      </td>
-      <td class={`${style.tdStyle} ${style.tdStyleAlignLeft} `}>
-        {value.totalGoalByReverseTeam}
-      </td>
-      <td class={`${style.tdStyle} ${style.tdStyleAlignLeft} ${style.tdStyleBold}`}>
-        {value.totalPoints}
-      </td>
+      <td class={`${style.tdStyle} ${style.tdStyleAlignLeft} `}>{value.totalGoal}</td>
+      <td class={`${style.tdStyle} ${style.tdStyleAlignLeft} `}>{value.totalMatches}</td>
+      <td class={`${style.tdStyle} ${style.tdStyleAlignLeft} ${style.tdStyleBold}`}>{value.totalPoints}</td>
     </tr>)
   })
   return (
@@ -90,7 +90,7 @@ function Leaderboard() {
               <th class={`${style.thStyle} ${style.thStyleAlignLeft}`}>Team Name</th>
               <th class={`${style.thStyle} ${style.thStyleAlignLeft} `}>MP</th>
               <th class={`${style.thStyle} ${style.thStyleAlignLeft} `}>GF</th>
-              <th class={`${style.thStyle} ${style.thStyleAlignLeft} `}>GA</th>
+              <th class={style.thStyle}>GA</th>
               <th class={`${style.thStyle} ${style.thStyleAlignLeft} `}>Points</th>
             </tr>
             {
